@@ -31,7 +31,7 @@ function App() {
             <Route path='/give' element={<Give/>}/>
             {/* <Route path='/request' element={<Request/>}/> */}
             <Route path='/posts' element={<PostList/>}/>
-            <Route path="/api/users/login" element={<Login />} />
+            <Route path="/login" element={<Login />} />
             <Route path="/charity" element={<Charity />} />
         </Routes>
       </BrowserRouter>

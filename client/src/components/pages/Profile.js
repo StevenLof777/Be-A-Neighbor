@@ -3,7 +3,7 @@ import Auth from '../../utils/auth';
 import {Container, Row, Col, Button} from 'react-bootstrap'
 
 const Profile = () => {
-  console.log(Auth.getProfile().data)
+  // console.log(Auth.getProfile().data)
   return (
   <>
     <Container className='profile-container'>

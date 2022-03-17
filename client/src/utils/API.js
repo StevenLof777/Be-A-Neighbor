@@ -1,5 +1,5 @@
 export const getMe = (token) => {
-    return fetch('/api/users/me', {
+    return fetch('/me/', {
       headers: {
         'Content-Type': 'application/json',
         authorization: `Bearer ${token}`,
@@ -8,7 +8,7 @@ export const getMe = (token) => {
   };
   
   export const createUser = (userData) => {
-    return fetch('/api/users', {
+    return fetch('/signup/', {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json',
@@ -18,7 +18,7 @@ export const getMe = (token) => {
   };
   
   export const loginUser = (userData) => {
-    return fetch('/api/users/login', {
+    return fetch('/login/', {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json',
@@ -28,9 +28,9 @@ export const getMe = (token) => {
   };
   
   export const addPost = (postData, token) => {
-    console.log(postData);
-    console.log(token);
-    fetch('/api/posts/', {
+    // console.log(postData);
+    // console.log(token);
+    fetch('/post/', {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json',
@@ -42,7 +42,7 @@ export const getMe = (token) => {
   
   // Get posts
   export const getPosts = (postData) => {
-    return fetch('/api/posts/', {
+    return fetch('/posts', {
       headers: {
         'Content-Type': 'application/json'
       },
@@ -51,7 +51,7 @@ export const getMe = (token) => {
   };
   
   export const deletePost = (postId, token) => {
-    return fetch(`/api/users/posts/${postId}`, {
+    return fetch(`/users/posts/${postId}`, {
       method: 'DELETE',
       headers: {
         authorization: `Bearer ${token}`,
@@ -61,7 +61,7 @@ export const getMe = (token) => {
   
 //   How to add a reply?
   export const addReply = (postId, token) => {
-    return fetch(`/api/users/${postId}/`, {
+    return fetch(`user/${postId}/`, {
       method: 'POST',
       headers: {
         authorization: `Bearer ${token}`,

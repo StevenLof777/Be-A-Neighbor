@@ -28,10 +28,10 @@ const postController = {
   },
 
   createPost(req, res) {
-    console.log(req.user)
+    // console.log(req.user)
 
     Post.create(req.body)
-    console.log(req.body)
+    // console.log(req.body)
       .then((dbPostData) => {
         console.log(dbPostData)
         return User.findOneAndUpdate(

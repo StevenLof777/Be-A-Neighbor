@@ -15,6 +15,7 @@ module.exports = {
   },
 
   getSingleUser(req, res) {
+    console.log('hits get single user')
     User.findOne({ _id: req.params.userId })
       .select('-__v')
       .populate('posts')

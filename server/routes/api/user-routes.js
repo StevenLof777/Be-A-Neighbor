@@ -14,7 +14,7 @@ router.route('/').post(createUser).put(authMiddleware);
 
 router.route('/').get(getUsers);
 
-router.route('/user/:userId').get(getSingleUser);
+router.route('/:userId').get(getSingleUser);
 
 router.route('/login').post(login);
 

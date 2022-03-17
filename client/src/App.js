@@ -12,10 +12,10 @@ import Profile from './components/pages/Profile';
 import Give from './components/pages/Give';
 // import Map from './components/pages/Map';
 import Charity from './components/pages/Charities'
-import Footer from './components/Footer'
-import Post from './components/pages/Post';
+// import Footer from './components/Footer'
+// import Post from './components/pages/Post';
 import PostList from './components/PostList';
-import Request from './components/pages/Request';
+// import Request from './components/pages/Request';
 
 function App() {
   return (
@@ -31,7 +31,7 @@ function App() {
             <Route path='/give' element={<Give/>}/>
             {/* <Route path='/request' element={<Request/>}/> */}
             <Route path='/posts' element={<PostList/>}/>
-            <Route path="/login" element={<Login />} />
+            <Route path="/api/users/login" element={<Login />} />
             <Route path="/charity" element={<Charity />} />
         </Routes>
       </BrowserRouter>

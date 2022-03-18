@@ -31,6 +31,8 @@ module.exports = {
   },
 
   async getMe({ user = null, params }, res) {
+    console.log('hits getme')
+    console.log(params)
     const foundUser = await User.findOne({
       $or: [{ _id: user ? user._id : params.id }, { username: params.username }],
     });
@@ -69,6 +71,18 @@ module.exports = {
   },
   
   async deletePost({ user, params }, res) {
+    const updatedUser = await User.findOneAndUpdate(
+      { _id: user._id },
+      { $pull: { Posts: { PostId: params.PostId } } },
+      { new: true }
+    );
+    if (!updatedUser) {
+      return res.status(404).json({ message: "Couldn't find user with this id!" });
+    }
+    return res.json(updatedUser);
+  },
+  
+  async deleteUser({ user, params }, res) {
     const updatedUser = await User.findOneAndUpdate(
       { _id: user._id },
       { $pull: { Posts: { PostId: params.PostId } } },

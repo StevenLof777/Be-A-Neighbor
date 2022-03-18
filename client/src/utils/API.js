@@ -7,6 +7,16 @@ export const getMe = (token) => {
     });
   };
   
+export const deleteMe = (token) => {
+    return fetch('/me/', {
+      method: 'DELETE',
+      headers: {
+        'Content-Type': 'application/json',
+        authorization: `Bearer ${token}`,
+      },
+    });
+  };
+  
   export const createUser = (userData) => {
     return fetch('/signup/', {
       method: 'POST',
